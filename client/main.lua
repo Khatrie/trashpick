@@ -12,13 +12,9 @@ end
 local function Trashpicking(k)
     local ped = PlayerPedId()
     local pedCoords = GetEntityCoords(ped)
-    print(pedCoords)
     local trashindex = Config.Locations[k].coords
-    print(trashindex)
     local dist = #(pedCoords - trashindex)
-    print(dist)
     local opened = Config.Locations[k]["isOpened"]
-    print(opened)
         if dist <= 5.0 and not opened then
             Config.Locations[k]["isOpened"] = true
                 local animDict = "amb@world_human_bum_wash@male@low@idle_a"
@@ -38,7 +34,6 @@ local function Trashpicking(k)
                 end)
                 TriggerEvent('trashpick:client:setTrashState', "isOpened", true, k)
                 opened = Config.Locations[k]["isOpened"]
-                print(opened)
                 CreateThread(function()
                     while picking do
                         loadAnimDict(animDict)
@@ -82,9 +77,7 @@ RegisterNetEvent('trashpick:client:setTimeout', function()
     if not timeOut then
         timeOut = true
         Citizen.CreateThread(function()
-            print("cooldown starting")
             Citizen.Wait(Config.Timeout)
-            print("cooldown ended")
             for k, _ in pairs(Config.Locations) do
                 Config.Locations[k]["isOpened"] = false
                 TriggerEvent('trashpick:client:setTrashState', -1, 'isOpened', false, k)
@@ -96,14 +89,13 @@ end)
 
 CreateThread(function()
         for k, v in pairs(Config.Locations) do
-            local boxZone = BoxZone:Create(v.coords, 1.8, 1.8, {
+            local CircleZone = CircleZone:Create(v.coords, v.radius, {
                 name="jewelstore"..k,
-                heading = 40,
-                minZ = v.coords.z - 1,
-                maxZ = v.coords.z + 1,
-                debugPoly = true
+                useZ = true,
+                debugPoly = true,
             })
-            boxZone:onPlayerInOut(function(isPointInside)
+
+            CircleZone:onPlayerInOut(function(isPointInside)
                 if isPointInside then
                     Listen4Control(k)
                     exports['qb-core']:DrawText("Search", 'left')
