@@ -1,40 +1,66 @@
 Config = Config or {}
 
-Config.Timeout = 5 * (60 * 1000)
+Config.Timeout = 1 * (60 * 1000)
 
 Config.TrashRewards = {
     [1] = {
-        ["item"] = "rolex",
+        ["item"] = "plastic",
         ["amount"] = {
-            ["min"] = 1,
-            ["max"] = 4
+            ["min"] = 3,
+            ["max"] = 8
         },
     },
     [2] = {
-        ["item"] = "diamond_ring",
+        ["item"] = "steel",
         ["amount"] = {
-            ["min"] = 1,
-            ["max"] = 4
+            ["min"] = 4,
+            ["max"] = 10
         },
     },
     [3] = {
-        ["item"] = "goldchain",
+        ["item"] = "cloth",
+        ["amount"] = {
+            ["min"] = 5,
+            ["max"] = 10
+        },
+    },
+    [4] = {
+        ["item"] = "aluminum",
+        ["amount"] = {
+            ["min"] = 3,
+            ["max"] = 10
+        },
+    },
+    [5] = {
+        ["item"] = "metalscrap",
+        ["amount"] = {
+            ["min"] = 3,
+            ["max"] = 10
+        },
+    },
+    [6] = {
+        ["item"] = "titanium",
         ["amount"] = {
             ["min"] = 1,
-            ["max"] = 4
+            ["max"] = 3
+        },
+    },
+    [7] = {
+        ["item"] = "electronics",
+        ["amount"] = {
+            ["min"] = 3,
+            ["max"] = 10
         },
     },
 }
 
 Config.Locations = {
     [1] = {
-        ["coords"] = vector3(-626.83, -235.35, 38.05),
+        ["coords"] = vector3(700.07, 1284.14, 360.3),
         ["isOpened"] = false,
-        ["isBusy"] = false,
     },
     [2] = {
-        ["coords"] = vector3(-625.81, -234.7, 38.05),
+        ["coords"] = vector3(691.23, 1282.59, 360.3),
         ["isOpened"] = false,
-        ["isBusy"] = false,
     },
 }
