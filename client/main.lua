@@ -1,8 +1,13 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-local firstAlarm = false
-local smashing = false
-
+local picking = false
 -- Functions
+
+function loadAnimDict(dict)
+    while not HasAnimDictLoaded(dict) do
+        RequestAnimDict(dict)
+        Wait(5)
+    end
+end
 
 local function Trashpicking(k)
     local ped = PlayerPedId()
@@ -16,11 +21,11 @@ local function Trashpicking(k)
     print(opened)
         if dist <= 5.0 and not opened then
             Config.Locations[k]["isOpened"] = true
-                local animDict = "missheist_jewel"
-                local animName = "smash_case"
+                local animDict = "amb@world_human_bum_wash@male@low@idle_a"
+                local animName = "idle_a"
                 local ped = PlayerPedId()
-                smashing = true
-                QBCore.Functions.Progressbar("grab_trash", "grabbing Trash", 3000, false, true, {
+                picking = true
+                QBCore.Functions.Progressbar("idle_a", "grabbing Trash", 3000, false, true, {
                     disableMovement = true,
                     disableCarMovement = true,
                     disableMouse = false,
@@ -28,16 +33,16 @@ local function Trashpicking(k)
                 }, {}, {}, {}, function() -- Done
                     TriggerServerEvent('trashpick:server:trashreward', k)
                     TriggerEvent('trashpick:client:setTimeout')
-                    smashing = false
+                    picking = false
                     TaskPlayAnim(ped, animDict, "exit", 3.0, 3.0, -1, 2, 0, 0, 0, 0)
                 end)
                 TriggerEvent('trashpick:client:setTrashState', "isOpened", true, k)
                 opened = Config.Locations[k]["isOpened"]
                 print(opened)
                 CreateThread(function()
-                    while smashing do
+                    while picking do
                         loadAnimDict(animDict)
-                        TaskPlayAnim(ped, animDict, animName, 3.0, 3.0, -1, 2, 0, 0, 0, 0 )
+                        TaskPlayAnim(ped, animDict, animName, 2.0, -2.0, -1, 2, 0, 0, 0, 0 )
                         Wait(3000)
                     end
                 end)
@@ -46,18 +51,12 @@ local function Trashpicking(k)
         end
 end
 
-
 -- Events
+
 RegisterNetEvent('trashpick:client:setTrashState', function(stateType, state, k)
     if stateType == "isBusy" and type(state) == "boolean" and Config.Locations[k] then
         Config.Locations[k][stateType] = state
     end
-end)
-
-RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
-	QBCore.Functions.TriggerCallback('trashpick:server:gettrash', function(result)
-		Config.Locations = result
-	end)
 end)
 
 -- Threads
@@ -83,8 +82,9 @@ RegisterNetEvent('trashpick:client:setTimeout', function()
     if not timeOut then
         timeOut = true
         Citizen.CreateThread(function()
+            print("cooldown starting")
             Citizen.Wait(Config.Timeout)
-
+            print("cooldown ended")
             for k, _ in pairs(Config.Locations) do
                 Config.Locations[k]["isOpened"] = false
                 TriggerEvent('trashpick:client:setTrashState', -1, 'isOpened', false, k)
