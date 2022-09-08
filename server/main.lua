@@ -1,6 +1,4 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-local timeOut = false
-
 
 QBCore.Functions.CreateCallback('qb-jewellery:server:gettrash', function(_, cb)
 	cb(Config.Locations)
@@ -15,3 +13,4 @@ RegisterNetEvent('trashpick:server:trashreward', function(trashindex)
     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[Config.TrashRewards[item]["item"]], 'add')
     end
 end)
+

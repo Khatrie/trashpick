@@ -1,41 +1,113 @@
 Config = Config or {}
 
-Config.Timeout = 10 * (60 * 1000)
+Config.Timeout = 20 * (60 * 1000)
 
 Config.TrashRewards = {
     [1] = {
+        ["item"] = "steel",
+        ["amount"] = {
+            ["min"] = 1,
+            ["max"] = 4
+        },
+    },
+    [2] = {
+        ["item"] = "cloth",
+        ["amount"] = {
+            ["min"] = 1,
+            ["max"] = 4
+        },
+    },
+    [3] = {
+        ["item"] = "aluminum",
+        ["amount"] = {
+            ["min"] = 1,
+            ["max"] = 4
+        },
+    },
+    [4] = {
+        ["item"] = "metalscrap",
+        ["amount"] = {
+            ["min"] = 1,
+            ["max"] = 5
+        },
+    },
+    [5] = {
+        ["item"] = "electronics",
+        ["amount"] = {
+            ["min"] = 1,
+            ["max"] = 4
+        },
+    },
+    [6] = {
+        ["item"] = "steel",
+        ["amount"] = {
+            ["min"] = 1,
+            ["max"] = 2
+        },
+    },
+    [7] = {
+        ["item"] = "cloth",
+        ["amount"] = {
+            ["min"] = 1,
+            ["max"] = 2
+        },
+    },
+    [8] = {
+        ["item"] = "aluminum",
+        ["amount"] = {
+            ["min"] = 1,
+            ["max"] = 2
+        },
+    },
+    [9] = {
+        ["item"] = "metalscrap",
+        ["amount"] = {
+            ["min"] = 1,
+            ["max"] = 2
+        },
+    },
+    [10] = {
+        ["item"] = "electronics",
+        ["amount"] = {
+            ["min"] = 1,
+            ["max"] = 2
+        },
+    },
+}
+Config.TrashRewardsRare = {
+    [1] = {
         ["item"] = "plastic",
         ["amount"] = {
-            ["min"] = 3,
-            ["max"] = 8
+            ["min"] = 1,
+            ["max"] = 4
         },
     },
     [2] = {
         ["item"] = "steel",
         ["amount"] = {
-            ["min"] = 4,
-            ["max"] = 10
+            ["min"] = 1,
+            ["max"] = 4
         },
     },
     [3] = {
         ["item"] = "cloth",
         ["amount"] = {
-            ["min"] = 5,
-            ["max"] = 10
+            ["min"] = 1,
+            ["max"] = 4
         },
     },
     [4] = {
         ["item"] = "aluminum",
         ["amount"] = {
-            ["min"] = 3,
-            ["max"] = 10
+            ["min"] = 1,
+            ["max"] = 4
         },
     },
     [5] = {
         ["item"] = "metalscrap",
         ["amount"] = {
-            ["min"] = 3,
-            ["max"] = 10
+            ["min"] = 1,
+            ["max"] = 5
         },
     },
     [6] = {
@@ -48,8 +120,8 @@ Config.TrashRewards = {
     [7] = {
         ["item"] = "electronics",
         ["amount"] = {
-            ["min"] = 3,
-            ["max"] = 10
+            ["min"] = 1,
+            ["max"] = 4
         },
     },
 }
@@ -305,12 +377,12 @@ Config.Locations = {
         ["radius"] = 1, -- car
     },
     [50] = {
-        ["coords"] = vector3(1529.78, -2156.09, 79.06),
+        ["coords"] = vector3(1529.78, -2156.09, 78.56),
         ["isOpened"] = false,
         ["radius"] = 1,
     },
     [51] = {
-        ["coords"] = vector3(1528.53, -2151.56, 78.61),
+        ["coords"] = vector3(1528.53, -2151.56, 78.11),
         ["isOpened"] = false,
         ["radius"] = 1,
     },
@@ -360,12 +432,12 @@ Config.Locations = {
         ["radius"] = 1, --car
     },
     [61] = {
-        ["coords"] = vector3(1501.31, -2149.34, 77.16),
+        ["coords"] = vector3(1501.31, -2149.34, 76.66),
         ["isOpened"] = false,
         ["radius"] = 1.2,
     },
     [62] = {
-        ["coords"] = vector3(1506.79, -2153.52, 77.48),
+        ["coords"] = vector3(1506.79, -2153.52, 76.98),
         ["isOpened"] = false,
         ["radius"] = 1,
     },
@@ -425,7 +497,7 @@ Config.Locations = {
         ["radius"] = 1.2,
     },
     [74] = {
-        ["coords"] = vector3(1531.66, -2168.08, 78.65),
+        ["coords"] = vector3(1531.66, -2168.08, 78.15),
         ["isOpened"] = false,
         ["radius"] = 1,
     },
@@ -514,8 +586,14 @@ Config.Locations = {
         ["isOpened"] = false,
         ["radius"] = 1,
     },
-
-
-
-
+    [90] = {
+        ["coords"] = vector3(1559.4, -2121.09, 78.23),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [91] = {
+        ["coords"] = vector3(1516.41, -2119.4, 79.13),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
 }

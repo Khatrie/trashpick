@@ -16,17 +16,20 @@ local function Trashpicking(k)
     local dist = #(pedCoords - trashindex)
     local opened = Config.Locations[k]["isOpened"]
         if dist <= 5.0 and not opened then
+            exports["mz-skills"]:UpdateSkill("Scraping", 1)
             Config.Locations[k]["isOpened"] = true
                 local animDict = "amb@world_human_bum_wash@male@low@idle_a"
                 local animName = "idle_a"
                 local ped = PlayerPedId()
                 picking = true
-                QBCore.Functions.Progressbar("idle_a", "grabbing Trash", 3000, false, true, {
+                QBCore.Functions.Progressbar("idle_a", "Grabbing Trash", 3000, false, true, {
                     disableMovement = true,
                     disableCarMovement = true,
                     disableMouse = false,
                     disableCombat = true,
                 }, {}, {}, {}, function() -- Done
+                    --  amount = math.random(200)
+                    --  TriggerServerEvent('trashpick:server:trashreward', k, amount)
                     TriggerServerEvent('trashpick:server:trashreward', k)
                     TriggerEvent('trashpick:client:setTimeout')
                     picking = false
