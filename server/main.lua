@@ -13,4 +13,3 @@ RegisterNetEvent('trashpick:server:trashreward', function(trashindex)
     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[Config.TrashRewards[item]["item"]], 'add')
     end
 end)
-

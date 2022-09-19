@@ -7,70 +7,98 @@ Config.TrashRewards = {
         ["item"] = "steel",
         ["amount"] = {
             ["min"] = 1,
-            ["max"] = 4
+            ["max"] = 6
         },
     },
     [2] = {
         ["item"] = "cloth",
         ["amount"] = {
             ["min"] = 1,
-            ["max"] = 4
+            ["max"] = 6
         },
     },
     [3] = {
         ["item"] = "aluminum",
         ["amount"] = {
-            ["min"] = 1,
-            ["max"] = 4
+            ["min"] = 3,
+            ["max"] = 9
         },
     },
     [4] = {
         ["item"] = "metalscrap",
         ["amount"] = {
-            ["min"] = 1,
-            ["max"] = 5
+            ["min"] = 3,
+            ["max"] = 7
         },
     },
     [5] = {
         ["item"] = "electronics",
         ["amount"] = {
-            ["min"] = 1,
-            ["max"] = 4
+            ["min"] = 3,
+            ["max"] = 6
         },
     },
     [6] = {
         ["item"] = "steel",
         ["amount"] = {
-            ["min"] = 1,
-            ["max"] = 2
+            ["min"] = 3,
+            ["max"] = 6
         },
     },
     [7] = {
-        ["item"] = "cloth",
+        ["item"] = "aluminum",
         ["amount"] = {
-            ["min"] = 1,
-            ["max"] = 2
+            ["min"] = 3,
+            ["max"] = 6
         },
     },
     [8] = {
-        ["item"] = "aluminum",
+        ["item"] = "metalscrap",
         ["amount"] = {
-            ["min"] = 1,
-            ["max"] = 2
+            ["min"] = 3,
+            ["max"] = 6
         },
     },
     [9] = {
-        ["item"] = "metalscrap",
+        ["item"] = "electronics",
         ["amount"] = {
-            ["min"] = 1,
-            ["max"] = 2
+            ["min"] = 3,
+            ["max"] = 6
         },
     },
     [10] = {
-        ["item"] = "electronics",
+        ["item"] = "rubber",
         ["amount"] = {
-            ["min"] = 1,
-            ["max"] = 2
+            ["min"] = 3,
+            ["max"] = 6
+        },
+    },
+    [11] = {
+        ["item"] = "rubber",
+        ["amount"] = {
+            ["min"] = 3,
+            ["max"] = 6
+        },
+    },
+    [12] = {
+        ["item"] = "titanium",
+        ["amount"] = {
+            ["min"] = 2,
+            ["max"] = 5
+        },
+    },
+    [13] = {
+        ["item"] = "plastic",
+        ["amount"] = {
+            ["min"] = 3,
+            ["max"] = 6
+        },
+    },
+    [14] = {
+        ["item"] = "plastic",
+        ["amount"] = {
+            ["min"] = 2,
+            ["max"] = 5
         },
     },
 }

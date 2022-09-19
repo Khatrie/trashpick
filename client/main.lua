@@ -95,7 +95,7 @@ CreateThread(function()
             local CircleZone = CircleZone:Create(v.coords, v.radius, {
                 name="jewelstore"..k,
                 useZ = true,
-                debugPoly = true,
+                debugPoly = false,
             })
 
             CircleZone:onPlayerInOut(function(isPointInside)
