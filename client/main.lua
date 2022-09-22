@@ -9,6 +9,46 @@ function loadAnimDict(dict)
     end
 end
 
+local function CheckSkills()
+    local test = exports["mz-skills"]:GetCurrentSkill("Scraping")
+    if test.Current <= 20 then
+        SkillLevel = 0
+        minamount = 1
+        maxamount = 2
+    elseif test.Current > 21 and test.Current <= 100 then
+        SkillLevel = 1
+        minamount = 1
+        maxamount = 5
+    elseif test.Current > 101 and test.Current <= 200 then
+        SkillLevel = 2
+        minamount = 2
+        maxamount = 5
+    elseif test.Current > 201 and test.Current <= 400 then
+        SkillLevel = 3
+        minamount = 3
+        maxamount = 7
+    elseif test.Current > 401 and test.Current <= 500 then
+        SkillLevel = 4
+        minamount = 4
+        maxamount = 7
+    elseif test.Current > 501 and test.Current <= 800 then
+        SkillLevel = 5
+        minamount = 4
+        maxamount = 8
+    elseif test.Current > 801 and test.Current <= 1500 then
+        SkillLevel = 6
+        minamount = 5
+        maxamount = 8
+    elseif test.Current > 1501 then
+        SkillLevel = 7
+        minamount = 5
+        maxamount = 8
+    else
+        SkillLevel = 'Unknown'
+    end
+   return minamount, maxamount
+end
+
 local function Trashpicking(k)
     local ped = PlayerPedId()
     local pedCoords = GetEntityCoords(ped)
@@ -16,7 +56,8 @@ local function Trashpicking(k)
     local dist = #(pedCoords - trashindex)
     local opened = Config.Locations[k]["isOpened"]
         if dist <= 5.0 and not opened then
-            exports["mz-skills"]:UpdateSkill("Scraping", 1)
+            CheckSkills()
+            local amount = math.random(minamount, maxamount)
             Config.Locations[k]["isOpened"] = true
                 local animDict = "amb@world_human_bum_wash@male@low@idle_a"
                 local animName = "idle_a"
@@ -30,13 +71,15 @@ local function Trashpicking(k)
                 }, {}, {}, {}, function() -- Done
                     --  amount = math.random(200)
                     --  TriggerServerEvent('trashpick:server:trashreward', k, amount)
-                    TriggerServerEvent('trashpick:server:trashreward', k)
+
+                    TriggerServerEvent('trashpick:server:trashreward', k, amount)
                     TriggerEvent('trashpick:client:setTimeout')
                     picking = false
                     TaskPlayAnim(ped, animDict, "exit", 3.0, 3.0, -1, 2, 0, 0, 0, 0)
                 end)
                 TriggerEvent('trashpick:client:setTrashState', "isOpened", true, k)
                 opened = Config.Locations[k]["isOpened"]
+                exports["mz-skills"]:UpdateSkill("Scraping", 1)
                 CreateThread(function()
                     while picking do
                         loadAnimDict(animDict)

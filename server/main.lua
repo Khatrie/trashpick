@@ -10,6 +10,6 @@ RegisterNetEvent('trashpick:server:trashreward', function(trashindex)
     local item = math.random(1, #Config.TrashRewards)
     local amount = math.random(Config.TrashRewards[item]["amount"]["min"], Config.TrashRewards[item]["amount"]["max"])
     if Player.Functions.AddItem(Config.TrashRewards[item]["item"], amount) then
-    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[Config.TrashRewards[item]["item"]], 'add')
+    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[Config.TrashRewards[item]["item"]], 'add', amount)
     end
 end)
