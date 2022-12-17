@@ -80,13 +80,6 @@ Config.TrashRewards = {
             ["max"] = 6
         },
     },
-    [12] = {
-        ["item"] = "titanium",
-        ["amount"] = {
-            ["min"] = 2,
-            ["max"] = 5
-        },
-    },
     [13] = {
         ["item"] = "plastic",
         ["amount"] = {
@@ -277,7 +270,7 @@ Config.Locations = {
         ["isOpened"] = false,
         ["radius"] = 1,
     },
-    [26] = {
+    [92] = {
         ["coords"] = vector3(-575.88, -1664.13, 19.46),
         ["isOpened"] = false,
         ["radius"] = 1.2,
@@ -550,16 +543,6 @@ Config.Locations = {
         ["radius"] = 1,
     },
     [79] = {
-        ["coords"] = vector3(1525.66, -2082.98, 78.55),
-        ["isOpened"] = false,
-        ["radius"] = 1,
-    },
-    [80] = {
-        ["coords"] = vector3(-599.3, -1667.3, 19.8),
-        ["isOpened"] = false,
-        ["radius"] = 1,
-    },
-    [79] = {
         ["coords"] = vector3(-601.21, -1677.51, 19.63),
         ["isOpened"] = false,
         ["radius"] = 1,
@@ -624,4 +607,111 @@ Config.Locations = {
         ["isOpened"] = false,
         ["radius"] = 1,
     },
+    [93] = {
+        ["coords"] = vector3(1525.66, -2082.98, 78.55),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [94] = {
+        ["coords"] = vector3(-599.3, -1667.3, 19.8),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [95] = {
+        ["coords"] = vector3(-216.12, 6291.04, 31.49),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [96] = {
+        ["coords"] = vector3(-223.55, 6285.63, 31.49),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [97] = {
+        ["coords"] = vector3(-221.87, 6283.63, 31.49),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [98] = {
+        ["coords"] = vector3(-216.67, 6277.64, 31.49),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [99] = {
+        ["coords"] = vector3(-211.94, 6273.3, 31.49),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [100] = {
+        ["coords"] = vector3(-212.78, 6267.48, 32.43),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [101] = {
+        ["coords"] = vector3(-208.99, 6274.06, 32.14),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [102] = {
+        ["coords"] = vector3(-197.29, 6264.07, 31.65),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [103] = {
+        ["coords"] = vector3(-147.36, 6267.28, 32.36),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [104] = {
+        ["coords"] = vector3(-173.34, 6236.96, 31.49),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [105] = {
+        ["coords"] = vector3(-175.79, 6238.51, 31.49),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [106] = {
+        ["coords"] = vector3(-177.25, 6240.94, 31.49),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [107] = {
+        ["coords"] = vector3(-180.56, 6241.34, 31.49),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [108] = {
+        ["coords"] = vector3(-182.17, 6243.5, 31.49),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [109] = {
+        ["coords"] = vector3(-187.52, 6255.74, 32.79),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [110] = {
+        ["coords"] = vector3(-189.15, 6311.54, 31.49),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [111] = {
+        ["coords"] = vector3(-211.2, 6295.44, 31.49),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [112] = {
+        ["coords"] = vector3(-214.43, 6284.23, 33.89),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+    },
+    [113] = {
+        ["coords"] = vector3(-176.27, 6265.13, 32.55),
+        ["isOpened"] = false,
+        ["radius"] = 1,
+        ["titanium"] = true,
+    },
+
 }

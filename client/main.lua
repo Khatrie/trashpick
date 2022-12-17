@@ -51,11 +51,12 @@ end
 
 local function Trashpicking(k)
     local ped = PlayerPedId()
+    if IsPedInAnyVehicle(ped, false) then QBCore.Functions.Notify('Get Out Of The Vehicle.', "error", 2500) return end
     local pedCoords = GetEntityCoords(ped)
     local trashindex = Config.Locations[k].coords
     local dist = #(pedCoords - trashindex)
     local opened = Config.Locations[k]["isOpened"]
-        if dist <= 5.0 and not opened then
+        if dist <= 2.0 and not opened then
             CheckSkills()
             local amount = math.random(minamount, maxamount)
             Config.Locations[k]["isOpened"] = true
@@ -69,9 +70,6 @@ local function Trashpicking(k)
                     disableMouse = false,
                     disableCombat = true,
                 }, {}, {}, {}, function() -- Done
-                    --  amount = math.random(200)
-                    --  TriggerServerEvent('trashpick:server:trashreward', k, amount)
-
                     TriggerServerEvent('trashpick:server:trashreward', k, amount)
                     TriggerEvent('trashpick:client:setTimeout')
                     picking = false
@@ -112,7 +110,7 @@ local function Listen4Control(k)
                 if not Config.Locations[k]["isBusy"] and not Config.Locations[k]["isOpened"] then
                     exports['qb-core']:KeyPressed()
                     Trashpicking(k)
-                    end
+                end
             end
             Wait(1)
         end
@@ -142,13 +140,13 @@ CreateThread(function()
             })
 
             CircleZone:onPlayerInOut(function(isPointInside)
-                if isPointInside then
-                    Listen4Control(k)
-                    exports['qb-core']:DrawText("Search", 'left')
-                else
-                    listen = false
-                    exports['qb-core']:HideText()
-                end
-            end)
+                    if isPointInside then
+                        Listen4Control(k)
+                        exports['qb-core']:DrawText("Search", 'left')
+                    else
+                        listen = false
+                        exports['qb-core']:HideText()
+                    end
+                end)
         end
     end)
